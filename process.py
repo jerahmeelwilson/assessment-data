@@ -16,3 +16,18 @@ def sales_reports(log_file):
 
 #Calling the function with the log
 sales_reports(log_file)
+
+log_file.close()
+
+log_file = open("um-server-01.txt")
+
+def sales_over_10(log_file):
+    for line in log_file:
+        line_split = line.split(" ")
+        amount = int(line_split[2])
+        if(amount > 10):
+            print(line.rstrip())
+
+sales_over_10(log_file)
+
+log_file.close()
